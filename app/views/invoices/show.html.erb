@@ -1,0 +1,154 @@
+<div class="invoice-box">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="4">
+        <table>
+          <tr>
+            <td class="title">
+              <%= image_tag wicked_pdf_asset_base64('bharti-axa-logo.svg') %>
+            </td>
+            <td style="text-align: center !important;">
+              <b>BHARTI AXA LIFE INSURANCE COMPANY LIMITED</b>
+              <p>Registered Office: 61/62, Kalpataru Synergy, Vakola, Santacruz (East), Mumbai 400055</p>
+            </td>
+            <td>
+              <%= image_tag wicked_pdf_asset_base64('bharti-axa-logo.svg') %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" class="center">
+        <b>Policy Document</b>
+        <p>Bharti AXA Life Sanjeevani</p>
+      </td>
+    </tr>
+  </table>
+  <div style="font-size:12px;">
+    <p> 
+      Bharti AXA Life Sanjeevani, a single premium group term life insurance policy (”the Policy”) 
+      is  issued  by  Bharti  AXA  Life  Insurance  Company  Limited  ("the  Company")  pursuant  to  the  
+      proposal of <b><%= @invoice.assured_full_name %></b> ("the Policyholder") dated <%= @invoice.created_at.strftime('%d/%m/%Y') %> and in consideration of payment of Premiums as set out in the Policy.
+      The  Policy  has  been  effected  on  the  lives  of  the  Life  Insured  based  on  the  proposal  form, and  the  statements,  information,  data  and  evidence  furnished  by  the  Policyholder  and receipt of Coverage Premiums from the Policyholder.
+      The Company agrees to provide the Coverage/(s) and pay Benefit(s) in accordance with the 
+      terms of the Policy.
+      The proposal together with the statements, information, data and evidence, already 
+      furnished  or to be furnished and leading  to  the  effecting of  the  insurance  hereunder, giving 
+      all the variations in the particulars of the Lives Insured in so far as such variations have any 
+      bearing on the insurance effected from time to time, shall be and are hereby declared to be 
+      the basis of the Policy.
+      The terms printed on this and the following pages along with the Schedule as existing on the 
+      date  of  issue  of  the  Policy  and  as  attached  herewith  and  any  endorsements  placed  on  the Policy form part of the Policy.
+    </p>
+  </div>
+  <table class="table-border" style="font-size:12px;">
+    <tr class="information">
+      <td class="table-border">
+        <b>Policy No.:</b>
+        <p class="center"><%= @invoice.policy_no %></p>
+        <b>Date of Commencement of Policy:</b>
+        <p class="center"><%= @invoice.date_of_commencement_of_policy%></p>
+        <b>Date of Commencement of Risk:</b>
+        <p class="center"><%= @invoice.date_of_commencement_of_risk%></p>
+        <b>Plan and Policy:</b>
+        <p class="center">Bharti AXA Life Sanjeevani</p>
+        <b>Date Of Maturity:</b>
+        <p class="center"><%= @invoice.date_of_maturity%></p>
+      </td>
+      <td class="table-border">
+        <b><p class="text-left">Basic Sum Assured Rs. (₹):</p></b>
+        <p><%= @invoice.basic_sum_assured%></p>
+        <b><p class="text-left">Accident Benefit Sum Assured Rs. (₹):</p></b>
+        <p><%= @invoice.accidental_benefit_sum_assured%></p>
+      </td>
+      <td class="table-border">
+        <b>Premium For Plan Rs. (₹):</b>
+        <p class="center"><%= @invoice.premium_for_plan%></p>
+        <b>Total Premium Amount Rs. (₹):</b>
+        <p class="center"><%= @invoice.total_premium_amount_rs%></p>
+      </td>
+      <td class="table-border">
+        <b>Date of Paid.:</b>
+        <p class="center"><%= @invoice.date_for_paid%></p>
+        <b>Mode of Payment:</b>
+        <p class="center">Online</p>
+        <b>Date of birth of the Life Assured</b>
+        <p class="center"><%= @invoice.date_of_birth_of_assured%></p>
+        <b>Age of the Life Assured</b>
+        <p class="center"><%= @invoice.age_of_the_life_assured%></p>
+        <b>Whether age Admitted?</b>
+        <p class="center">Y</p>
+      </td>      
+    </tr>
+    <tr class="table-border">
+      <td colspan="3" class="table-border">
+        <b>Nominee Under Section 39 of the Insurance Act, 1938:</b><br>
+        <p><%= @invoice.nominee_name%><span style="margin-left:20px;"><%= @invoice.nominee_relation%></span></p>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>
+              <b>Proposal No.:</b>
+              <p> <%= @invoice.proposal_no%></p>
+            </td>            
+          </tr>
+          <tr>
+            <td>
+              <b>Date Of Proposal:</b>
+              <p><%= @invoice.date_of_proposal%></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <b>Name & Address of the Proposer</b>
+        <p><b><%= @invoice.name_of_proposer%></b></p>
+        <%= @invoice.address_of_proposer%>
+        <p></p>
+      </td>
+      <td colspan="2">
+        <b>Name & Address of the Assured</b>
+        <p><b><%= @invoice.assured_full_name%></b></p>
+        <%= @invoice.address_of_assured%>
+      </td>
+    </tr>
+  </table>
+  <div class="table-border" style="margin-top:10px;">
+    <div style="padding: 10px;">
+      <b>Events on the happening of which benefits are payable:</b>Details are mentioned overleaf. 
+    </div>
+  </div>
+  <table class="table-border" style="font-size:12px;">
+    <tr class="table-border">
+      <td class="table-border">
+        To Whom Sum Assured payable
+      </td>
+      <td colspan="3" class="table-border align-left">
+        The Proposer or Life Assured or his Assignee under Section 38 of the Insurance Act 1938 or Nominees under Section 39 of the Insurance Act 1938 ot proved Executors or Administrators or other Legal Representatives who should take out representation to his/her Estate or limited to the moneys payable under this Policy from any Court of any State or Territory of the Union of India.
+      </td>      
+    </tr>
+    <tr class="table-border">
+      <td class="table-border"> Period during which premium payable</td>
+      <td colspan="3" class="table-border  align-left"> Till the stipulated due date of the payment of last premium or earlier death of the Life Assured.</td>
+    </tr>
+  </table>
+  <table style="font-size:12px;">
+    <tr>
+      <td colspan="2" class="left">
+        <b>Date:</b><%= @invoice.created_at.strftime('%d/%m/%Y') %> <br>
+        <b>Examined By:</b>
+      </td>
+      <td></td>
+      <td colspan="2" class="right">
+        <%= image_tag wicked_pdf_asset_base64('signature.jpeg'), :style=>"height:70px;"%>
+      </td>
+    </tr>
+  </table>
+  <div class="center margin-top" style="font-size:12px;">
+    <p><b>This receipt is electronically generated and no signature is required.</b></p>
+  </div>
+</div>

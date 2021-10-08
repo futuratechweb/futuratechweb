@@ -1,0 +1,172 @@
+<%= form_with(model: invoice) do |form| %>
+  <% if invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+        <% invoice.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "assured_full_name" %>
+        <%= form.text_field :assured_full_name, :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "name_of_proposer" %>
+        <%= form.text_field :name_of_proposer, :required => true%>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "address_of_proposer" %>
+        <%= form.text_field :address_of_proposer, :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "address_of_assured" %>
+        <%= form.text_field :address_of_assured, :required => true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "Email" %>
+        <%= form.text_field :to_email, :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "Mobile Number" %>
+        <%= form.text_field :to_phone, :required => true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "date_of_birth_of_assured" %>
+        <%= form.text_field :date_of_birth_of_assured, placeholder: "21/12/2021", :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "age_of_the_life_assured" %>
+        <%= form.text_field :age_of_the_life_assured, placeholder: "Age", :required => true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "nominee_name" %>
+        <%= form.text_field :nominee_name, :required => true%>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "nominee_relation" %>
+        <%= form.text_field :nominee_relation, :required => true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "Policy Number" %>
+        <%= form.text_field :policy_no, :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "date_of_commencement_of_policy" %>
+        <%= form.text_field :date_of_commencement_of_policy, placeholder: "21/12/2021", :required => true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "date_of_commencement_of_risk" %>
+        <%= form.text_field :date_of_commencement_of_risk, placeholder: "21/12/2021", :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "plan_and_policy" %>
+        <%= form.text_field :plan_and_policy, :required => true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "date_of_maturity" %>
+        <%= form.text_field :date_of_maturity, placeholder: "21/12/2021", :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "basic_sum_assured" %>
+        <%= form.text_field :basic_sum_assured, :required => true%>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "accidental_benefit_sum_assured" %>
+        <%= form.text_field :accidental_benefit_sum_assured, :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "premium_for_plan" %>
+        <%= form.text_field :premium_for_plan, :required => true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "total_premium_amount_rs" %>
+        <%= form.text_field :total_premium_amount_rs, :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "date_of_paid" %>
+        <%= form.text_field :date_for_paid, placeholder: "21/12/2021", :required => true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "proposal_no" %>
+        <%= form.text_field :proposal_no, :required => true %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <div class="field">
+        <%= form.label "date_of_proposal" %>
+        <%= form.text_field :date_of_proposal, placeholder: "21/12/2021", :required => true%>
+      </div>
+    </div>
+  </div>  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
