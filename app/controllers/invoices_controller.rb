@@ -1,5 +1,5 @@
 class InvoicesController < ApplicationController
-  before_action :set_invoice, only: %i[ show edit update destroy send_mail]
+  before_action :set_invoice, only: %i[ show edit update destroy]
   after_action :send_mail, only: :show
   before_action :authenticate_user!
 
@@ -20,7 +20,7 @@ class InvoicesController < ApplicationController
                orientation: "Portrait",
                lowquality: true,
                zoom: 1,
-               save_to_file: Rails.root.join('pdfs', "premium_invoice_#{@invoice.id}.pdf"),
+               save_to_file: Rails.root.join('tmp', "premium_invoice_#{@invoice.id}.pdf"),
                dpi: 75
       end
     end
