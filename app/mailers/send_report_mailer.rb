@@ -1,5 +1,5 @@
 class SendReportMailer < ApplicationMailer
-  default from: "futura.vijayashaarathy@gmail.com"
+  default from: "no-reply@axalifeins.com"
 
   def send_report(invoice_id)
   	@invoice = Invoice.find invoice_id
