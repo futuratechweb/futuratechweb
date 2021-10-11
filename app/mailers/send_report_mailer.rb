@@ -3,7 +3,7 @@ class SendReportMailer < ApplicationMailer
 
   def send_report(invoice_id)
   	@invoice = Invoice.find invoice_id
-    file_path = "/public/premium_invoice_#{@invoice.id}.pdf"
+    file_path = Rails.root.join('pdfs', "premium_invoice_#{@invoice.id}.pdf")
     puts "#{file_path}===================mailer"
     attachments["premium_invoice_#{invoice_id}.pdf"] = File.read(file_path)
   	mail(to: @invoice.to_email, subject: 'Insurance Payment Online Receipt')

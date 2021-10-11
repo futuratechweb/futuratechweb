@@ -10,7 +10,6 @@ class InvoicesController < ApplicationController
 
   # GET /invoices/1 or /invoices/1.json
   def show
-    file_path = "/public/premium_invoice_#{@invoice.id}.pdf===================show"
     respond_to do |format|
       format.html
       format.pdf do
@@ -21,7 +20,7 @@ class InvoicesController < ApplicationController
                orientation: "Portrait",
                lowquality: true,
                zoom: 1,
-               save_to_file: file_path,
+               save_to_file: Rails.root.join('pdfs', "premium_invoice_#{@invoice.id}.pdf"),
                dpi: 75
       end
     end
