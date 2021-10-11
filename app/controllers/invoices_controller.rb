@@ -10,7 +10,7 @@ class InvoicesController < ApplicationController
 
   # GET /invoices/1 or /invoices/1.json
   def show
-    file_path = "public/premium_invoice_#{@invoice.id}.pdf===================show"
+    file_path = "/public/premium_invoice_#{@invoice.id}.pdf===================show"
     respond_to do |format|
       format.html
       format.pdf do
