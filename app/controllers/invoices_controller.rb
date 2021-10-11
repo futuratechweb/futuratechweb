@@ -20,7 +20,7 @@ class InvoicesController < ApplicationController
                orientation: "Portrait",
                lowquality: true,
                zoom: 1,
-               save_to_file: Rails.root.join('pdfs', "premium_invoice_#{@invoice.id}.pdf"),
+               save_to_file: Rails.root.join('public', "premium_invoice_#{@invoice.id}.pdf"),
                dpi: 75
       end
     end
