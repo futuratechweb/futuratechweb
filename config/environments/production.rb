@@ -106,7 +106,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtpout.secureserver.net",
     :port                 => 80,
-    :domain               => 'www.gaxalifeins.com',
+    :domain               => 'www.axalifeins.com',
     :user_name            => "no-reply@axalifeins.com",
     :password             => "Malai1987#",
     :authentication       => "plain",
