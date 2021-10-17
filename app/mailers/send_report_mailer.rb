@@ -9,4 +9,8 @@ class SendReportMailer < ApplicationMailer
   	mail(to: @invoice.to_email, subject: 'Insurance Payment Online Receipt')
     File.delete(file_path) if File.exist?(file_path)
   end
+
+  def check_mailer
+    mail(to: "smnmalai@gmail.com", subject: 'Insurance Payment Online Receipt')
+  end
 end
