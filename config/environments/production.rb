@@ -126,7 +126,7 @@ Rails.application.configure do
     port:                 '587',
     domain:               'axalifeins.com',
     user_name:            'no-reply@axalifeins.com',
-    password:             'Malai1987#',
+    password:             ENV['EMAIL_PASSWORD'],
     authentication:       :login,
     enable_starttls_auto: false
   }
